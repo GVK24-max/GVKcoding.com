@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    var readlinesync = require ("readline-sync");
+const chalk = require ("chalk");
+
+
+var score = 0 ;
+
+
+
+var username = readlinesync.question ("Enter your name: ");
+
+console.log ("Welcome" + " to the game " + username);
+console.log ("Let's Begin");
+console.log ("__________________________________________")
+ 
+ 
+ 
+
+
+function play (question, answer) {
+
+
+  var useranswer = readlinesync.question (question);
+
+
+if (useranswer === answer) {
+  console.log (chalk.green("Thats correct! "))
+  score = score + 10
+}
+
+
+else {
+  console.log (chalk.red("You are wrong "));
+}
+
+
+
+console.log (chalk.green("Your Score: " + score));
+console.log (chalk.white.bold("---------------------"));
+}
+
+var questions = [
+  {question: "Name the capital of Goa: ",answer:"Panaji"},
+{question: "What is the full form of HD? ",
+ answer: "Harddisk"},
+ {question: "Who is the owner of Reliance? ",
+ answer: "Mukesh Ambani"}];
+
+
+
+for (var i = 0; i<questions.length; i++) {
+var currentquestion = questions [i];
+play (currentquestion.question, currentquestion.answer);
+}
+
+console.log (chalk.bold.yellow(username + " your Final Score: ", score));
+    
+</body>
+</html>
